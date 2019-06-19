@@ -4,6 +4,8 @@ services:
         wordpress:
                 image: wordpress
                 restart: always
+                volumes:
+                        - ./sage:/var/www/html/wp-content/themes/
                 ports:
                         - 8080:80
                 environment:
