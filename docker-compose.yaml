@@ -17,8 +17,12 @@ services:
         db:
                 image: mysql:5.7
                 restart: always
+                volumes:
+                        - mysql-data:/var/lib/mysql
                 environment:
                         MYSQL_DATABASE: wordpress
                         MYSQL_USER: user
                         MYSQL_PASSWORD: password
                         MYSQL_RANDOM_ROOT_PASSWORD: "1"
+volumes:
+        mysql-data:
