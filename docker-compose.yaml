@@ -4,6 +4,8 @@ services:
         wordpress:
                 image: wordpress
                 restart: always
+                depends_on:
+                        - db
                 volumes:
                         - ./sage:/var/www/html/wp-content/themes/
                 ports:
